@@ -1,0 +1,143 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.wrapper{
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    background: linear-gradient(45deg,#6fc7b5 0%,#13bdce, 20%,#0094d9 40%, #5a3694 60%, #ee4d74 80%, #f58c58 100%);
+    background-size: 400%;
+    background-position: 0% 100%;
+    animation: gradient 7.4s ease-in-out infinite;
+}
+@keyframes gradient {
+    0%{
+        background-position: 0% 100%;
+    }
+    50%{
+        background-position: 100% 0%;
+    }
+    100%{
+        background-position: 0% 100%;
+    }
+}
+.wrapper *{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0) rotate(0deg);
+}
+.wrapper .logo{
+    font-size: 40px;
+    color: #fff;
+    font-weight: bolder;
+}
+
+/* 先设置下面的 .active 和运动的keyframes函数！！ */
+/* 否则延迟 animation-delay不起作用 */
+.wrapper .dots.active .dot{
+    animation: move 2.5s ease-in-out;
+}
+.wrapper .dots.active .dot:after{
+    animation: role 2.5s ease-in-out 1;
+}
+@keyframes move {
+    0%{
+        transform: translate3d(-50%,-50%,0) rotate(0deg);
+    }
+    100%{
+        transform: translate3d(-50%,-50%,0) rotate(360deg);
+    }
+}
+@keyframes role {
+    0%{
+        transform: scale(0.2);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0.2);
+    }
+}
+.wrapper .dots .dot{
+    width: 300px;
+    height: 300px;
+}
+.wrapper .dots .dot:after{
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #fff;
+    transform: scale(0.2);
+}
+.wrapper .dots .dot:nth-child(1) {
+    left: 100px;
+    top: 150px;
+    animation-delay: 0s;
+}
+.wrapper .dots .dot:nth-child(1):after{
+    transform-origin: top right;
+    top: 0px;
+    left: 0px;
+    animation-delay: 0s;
+}
+.wrapper .dots .dot:nth-child(2) {
+    left: -230px;
+    top: -150px;
+    animation-delay: 0.25s;    
+}
+.wrapper .dots .dot:nth-child(2):after{
+    bottom:0;
+    right:0;
+    transform-origin: bottom right;
+    animation-delay: 0.25s;  
+}
+.wrapper .dots .dot:nth-child(3) {
+    left: -150px;
+    top: -200px;
+    animation-delay: 0.5s; 
+}
+.wrapper .dots .dot:nth-child(3):after{
+    bottom:0;
+    right:0;
+    transform-origin: bottom right;
+    animation-delay: 0.5s; 
+}
+.wrapper .dots .dot:nth-child(4) {
+    left: 180px;
+    top: 177px;
+    animation-delay: 0.75s;
+}
+.wrapper .dots .dot:nth-child(4):after{
+    top:0;
+    left:0;
+    transform-origin: top left;
+    animation-delay: 0.75s;
+}
+.wrapper .dots .dot:nth-child(5) {
+    left: 100px;
+    top: -180px;
+    animation-delay: 1s;
+}
+.wrapper .dots .dot:nth-child(5):after{
+    bottom:0;
+    left:0;
+    transform-origin: bottom left;
+    animation-delay: 1s;
+}
+.wrapper .dots .dot:nth-child(6) {
+    left: 250px;
+    top: 207px;
+    animation-delay: 1s;
+}
+.wrapper .dots .dot:nth-child(6):after{
+    transform-origin: top left;
+    top: 0px;
+    left: 0px;
+    animation-delay: 1s;
+}
